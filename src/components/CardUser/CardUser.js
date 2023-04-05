@@ -1,36 +1,33 @@
 import * as React from "react";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import { CardActionArea } from "@mui/material";
+import {
+  Card,
+  CardContent,
+  CardMedia,
+  Typography,
+  CardActionArea,
+} from "@mui/material";
 
-const CardUser = ({
-  img,
-  name,
-  description,
-  date,
-  backgroundColor,
-  children,
-}) => {
+import img from "./user.jpg";
+
+const CardUser = ({ data }) => {
   return (
-    <Card sx={{ maxWidth: 345, background: backgroundColor }}>
+    <Card sx={{ maxWidth: 345 }}>
       <CardActionArea>
-        <CardMedia component="img" image={img} alt="green iguana" />
+        <CardMedia component="img" image={img} alt="user" />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            {name}
+            {data.name}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {description}
+            {data.email}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {date}
+            {data.phone}
           </Typography>
-          <div>{children}</div>
         </CardContent>
       </CardActionArea>
     </Card>
   );
 };
+
 export default CardUser;
